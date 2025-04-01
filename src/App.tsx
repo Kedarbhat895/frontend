@@ -1,22 +1,21 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Services from './pages/Services';
-import Products from './pages/Products';
-import GetInTouch from './pages/GetInTouch';
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import GetInTouch from './pages/GetInTouch';
+import Products from './pages/Products';
+import './App.css';
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main>
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/products" element={<Products />} />
             <Route path="/get-in-touch" element={<GetInTouch />} />
+            <Route path="/products" element={<Products />} />
           </Routes>
         </main>
         <Footer />
